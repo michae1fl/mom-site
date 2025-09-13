@@ -1,42 +1,39 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Load Tailwind v4 */
+@import "tailwindcss";
+
+/* Theme tokens you reference in classes */
+@theme inline {
+  --color-brand-600: #358fff;   /* primary */
+  --color-brand-700: #1f72e6;
+
+  /* Optional (keep for later if you want Beige/Wine) */
+  --color-brand-beige-50:  #faf6f0;
+  --color-brand-beige-100: #f5efe6;
+  --color-brand-wine-600:  #6d1b25;
+  --color-brand-wine-700:  #5b1820;
+
+  --font-sans: ui-sans-serif, system-ui, Inter, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Base */
+:root { color-scheme: light; }
+body { font-family: var(--font-sans); }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+/* Heading/body helpers */
+h1 { @apply text-4xl md:text-5xl font-semibold tracking-tight; }
+h2 { @apply text-3xl md:text-4xl font-semibold tracking-tight; }
+h3 { @apply text-2xl md:text-3xl font-semibold tracking-tight; }
+p  { @apply leading-relaxed; }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* Layout helpers */
+.container-section { @apply mx-auto max-w-5xl; }
+.section { @apply py-10 md:py-14; }
+.card { @apply rounded-2xl border bg-white p-6 shadow-sm; }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+/* Buttons */
+.btn-primary { @apply inline-flex items-center rounded-xl bg-brand-600 px-4 py-2 text-white hover:bg-brand-700 transition-colors; }
+.btn-outline { @apply inline-flex items-center rounded-xl border px-4 py-2 hover:border-brand-600 hover:text-brand-700 transition-colors; }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
+/* Image helpers for <Image fill /> */
+.portrait-wrapper { @apply relative aspect-[4/5] w-full; }
+.thumb-wrapper    { @apply relative aspect-video w-full; }
