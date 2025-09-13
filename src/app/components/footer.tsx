@@ -10,7 +10,7 @@ export function Footer() {
           <p className="text-sm text-slate-600 mt-2">© {new Date().getFullYear()} All rights reserved.</p>
         </div>
         <div className="md:justify-self-end flex gap-4 text-sm">
-          <a href="#">LinkedIn</a><a href="#">Facebook</a><a href="#">Instagram</a>
+          <a href="https://www.linkedin.com/in/folasade-femi-lawal/">LinkedIn</a>
         </div>
       </Container>
     </footer>

@@ -15,10 +15,9 @@ export function Nav() {
       <Container className="h-16 flex items-center justify-between">
         <Link href="/" className="font-semibold tracking-tight text-xl">Dr. Folasade Femi-Lawal</Link>
         <nav className="hidden md:flex gap-6 text-sm">
-          <Link href="/">Home</Link>
           <Link href="/about">About</Link>
           <Link href="/publications">Publications</Link>
-          <Link href="/speaking">Speaking Highlights</Link>
+          <Link href="/speaking">Highlights</Link>
           <Link href="/contact">Contact</Link>
         </nav>
         <button className="md:hidden rounded-xl border px-3 py-1.5 text-sm" onClick={() => setOpen(true)}>Menu</button>
